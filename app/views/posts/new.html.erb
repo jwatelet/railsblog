@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mx-auto col-sm-offset-3">
+      <h2 class="text-center">Create blog post</h2>
+        <%= bootstrap_form_for Post.new do |f| %>
+          <div class="form-group">
+            <%= f.text_area :text %>
+          </div>
+          <div class="form-group">
+            <%= f.file_field :image %>
+          </div>
+          <div class="form-group" hidden>
+            <%= f.text_field :user_id, value: current_user.id, class:'d-none'%>
+          </div>
+          <br>
+          <div class="text-center">
+            <%= f.submit 'Create Post', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+    </div>
+  </div> 
+</div>

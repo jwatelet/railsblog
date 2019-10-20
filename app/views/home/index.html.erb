@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-sm-6 mx-auto col-sm-offset-3">
+    <% @posts.each do |post| %>
+      <div class="card" style="width: 40rem;">
+        <%= image_tag post.image, class: 'card-img-top' %>
+        <div class="card-body">
+          <h5 class="card-title">Author : <%= post.user.email %></h5>
+          <p class="card-text"> <%= post.text %></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="col-sm-6 mx-auto col-sm-offset-3">
+      <%= paginate @posts%>
+    </div>
+  </div>
+</div>
