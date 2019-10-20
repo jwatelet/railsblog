@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is just a blog application. I use rails, bootstrap and postgresql for the database.
 
-Things you may want to cover:
+## Get started ##
 
-* Ruby version
+#### Create the database ####
 
-* System dependencies
+`rails db:migrate`
 
-* Configuration
+#### Launch the server ####
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rails s`
