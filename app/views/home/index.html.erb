@@ -1,16 +1,21 @@
 <div class="container">
-  <div class="col-sm-6 mx-auto col-sm-offset-3">
-    <% @posts.each do |post| %>
-      <div class="card" style="width: 40rem;">
-        <%= image_tag post.image, class: 'card-img-top' %>
-        <div class="card-body">
-          <h5 class="card-title">Author : <%= post.user.email %></h5>
-          <p class="card-text"> <%= post.text %></p>
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <% @posts.each do |post| %>
+        <div class="card mb-4">
+          <%= image_tag post.image, class: 'card-img-top' %>
+          <div class="card-body">
+            <p class="card-text"> <%= post.text %></p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted by <%= link_to post.user.email, home_index_path %>
+          </div>
         </div>
+      <% end %>
+      <div class="col-md-4 mx-auto">
+        <%= paginate @posts%>
       </div>
-    <% end %>
-    <div class="col-sm-6 mx-auto col-sm-offset-3">
-      <%= paginate @posts%>
     </div>
   </div>
 </div>
