@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
-    redirect_to root_path if @post.valid?
-    redirect_to new_post_path, @post.errors
+    if @post.valid?
+      redirect_to root_path 
+    else
+      redirect_to new_post_path, @post.errors
+    end
   end
 
   private
